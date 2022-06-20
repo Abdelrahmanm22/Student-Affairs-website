@@ -1,0 +1,39 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <title>HOME</title>
+</head>
+<body>
+    
+        <div class="container">
+            <img class="home-cover" src="{% static 'Image/cover-1.jpg' %}" alt="cover">
+
+            <div class="text">
+                <img src="{% static 'Image/slider-item-1.png' %}">
+                <h1 id="titletext">
+                    <i style="color:#0c1d25">MyUniversity</i> <br>
+                    Student Affairs <br> 
+                </h1>
+                <p id="textext">Hello, this is <i style="color: #0c1d25;">MyUniversity</i> student affairs website. This website is used
+                    for registering new students and updating existing students information.
+                    Instructors that do not have an account must sign up offline 
+                    after an approval from the adminstration.<br> <br>
+                        <a href="{% url 'login'%}" style="font-size: 16px;font-weight:600; ">Already have an account? Sign in.</a>
+                </p>
+                
+            </div>
+        </div>
+
+    <script src="{% static 'JavaScript/main.js' %}"></script>
+</body>
+</html>
+
+{% endblock content %}

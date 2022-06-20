@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <title></title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="elements">
+            <a href="{% url 'home' %}" class="navigation">Home</a>
+            <a href="{% url 'AddStudent' %}" class="navigation">Add Student</a>
+            <a href="{% url 'UpdateInfo' %}" class="navigation">Update</a>
+            <a href="{% url 'Search' %}" class="navigation">Search</a>
+            <a href="{% url 'View' %}" class="navigation">View</a>
+            <a href="{% url 'login' %}" class="navigation">Login</a>
+        </div>
+    </nav>
+    <script src="{% static 'JavaScript/main.js' %}"></script>
+</body>
+</html>
+
+{% block content %}
+{% endblock content %}

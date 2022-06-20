@@ -1,0 +1,101 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <title>
+        Update
+    </title>
+</head>
+
+<body>
+
+    <div class="container" style="background-color: #f5f2f0; height:100%"></div>
+    <!-- <nav class="nav">
+            <div class="elements">
+                <p class="navigation">Home</p>
+                <p class="navigation">Add Student</p>
+                <p class="navigation">Update</p>
+                <p class="navigation">Search</p>
+                <p class="navigation">Department</p>
+                <p class="navigation">Login</p>
+            </div>
+        </nav> -->
+        
+    <table class="table1">
+
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>GPA</th>
+            <th>Gender</th>
+            <!-- <th>Date</th> -->
+            <th>Department</th>
+            <th>Level</th>
+            <th>Activation</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        
+            <form method="post">
+        {% for x in stu %}
+       
+        <tr>
+            
+                {% csrf_token %}
+
+                <td><input type="text" value="{{x.Name}}" name="Uname"></td>
+                <td><input type="text" value="{{x.StudentID}}" name="UIdentity"></td>
+                <td> <input type="text" value="{{x.GPA}}" name="UGPA" id=""></td>
+                <td> <input type="text" value="{{x.Gender}}" name="UGender"></td>
+                <!-- <td> <input type="date" value="{{x.Date}}" name="Udate"></td> -->
+                <td>{{x.Department}}</td>
+                <td> <input type="text" value="{{x.level}}" name="Ulevel"></td>
+                <td><input type="checkbox" value="{{x.activation}}" name="Uact"></td>
+                <!-- <input type="submit" value="Update" class="updateBtn"> -->
+
+                <td><a class="UpdateDelete" href="{{x.Student}}">Update</a></td> 
+                <td><a class="UpdateDelete" href="{{x}}" id ="Delete" >Delete </a></td>
+
+
+            {% comment %} </form> {% endcomment %}
+
+        </tr>
+        {% endfor %}
+    </form>
+        
+
+
+    </table>
+
+    
+
+    
+
+    <div class="Search_Bar">
+        <input type="text" placeholder="Search..">
+    </div>
+
+    <button class="btnSearch" type="submit">
+        &#128270
+    </button>
+
+
+
+    <!-- <button class="deleteBtn">Delete</button><br> -->
+
+    </div>
+
+
+    <script src="{% static 'JavaScript/main.js' %}"></script>
+    
+</body>
+
+</html>
+{% endblock content %}

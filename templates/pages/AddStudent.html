@@ -1,0 +1,144 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <title>ADD STUDENT</title>
+</head>
+<body>
+    
+    <div class="container">
+        
+
+
+        <!-- <nav class="nav">
+            <div class="elements">
+                <p class="navigation">Home</p>
+                <p class="navigation">Add Student</p>
+                <p class="navigation">Update</p>
+                <p class="navigation">Search</p>
+                <p class="navigation">Department</p>
+                <p class="navigation">Login</p>
+            </div>
+        </nav> -->
+
+
+        <div class="Form">
+            <div class="left">
+                <h1><i style="color: #fbb844;">MyUniversity</i> <br>
+                    Student Affairs
+                </h1>
+                <img src="{% static 'Image/brain-desktop.svg' %}" alt="brain" width="250px" height="250px">
+            </div>
+            <div class="right">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class = "partone">
+                        <div class = "group1">
+                            <fieldset style="border: 0;">
+                                <label for="name" >Name</label><br>
+                                <input type="text" id="name" name="name" required><br>
+                            </fieldset>
+                        </div>
+                        <div class = "group2">
+                            <fieldset style="border: 0;">    
+                                <label for="id" >ID</label><br>
+                                <input type="text" id="ID" name="Identity" ><br>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class = "parttwo">
+                        
+                            <fieldset style="border: 0;">
+                                <label for="email" >Email</label><br>
+                                <input type="email" id="email" name="email" style="padding: 13px 110px;"><br>
+                            </fieldset>
+                        
+                    </div>
+
+                    <div class = "partthree">
+                        <div class = "group3">
+                            <fieldset style="border: 0;">    
+                                <label for="Phone" >Phone Number</label><br>
+                                <input type="text" id="Phone" name="Phone" ><br>
+                            </fieldset>
+                        </div>
+                        <div class = "group4">    
+                            <fieldset style="border: 0;">
+                                <label for="GPA">GPA</label><br>
+                                <input type="text" id="GPA" name="GPA" >
+                            </fieldset>
+                        </div>
+                    </div>
+
+                
+                    <div class = "triple1">
+                        <fieldset style="border: 0;">
+                            <label for="Department">Dept.</label><br>
+                            <input list="Department" name="Dept">                           
+                                <datalist id="Department">
+                                    <option value="DS">DS</option>
+                                    <option value="CS">CS</option>
+                                    <option value="IS">IS</option>
+                                    <option value="IT">IT</option>
+                                    <option value="AI">AI</option>
+                                </datalist>
+                        </fieldset>
+                    </div>
+                    <div class="triple2">
+                        <fieldset style="border: 0;">
+                            <label for="Level">Level</label><br>
+                            <input list="Level" name="Level"> 
+                                <datalist id="Level" >
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </datalist>
+                        </fieldset>
+                    </div>
+                    <div class="triple3">
+                        <fieldset style="border: 0;">
+                            <label for="Gender">Gender</label><br>
+                            <input list="Gender" name="Gender"> 
+                                <datalist id="Gender">
+                                    <option value="Male"></option>
+                                    <option value="Female"></option>
+                                </datalist>
+                        </fieldset>
+                    </div>
+
+                    <div class="partfour">
+                        <div class="group5">
+                            <fieldset style="border: 0;">    
+                                <label for="Date">Date</label><br>
+                                <input type="date" id="Date" name="Date" ><br>
+                            </fieldset>
+                        </div>
+                        <div class="group6">
+                            <input type="radio" name="act" style="box-shadow: none;">Active
+                            <!-- <input type="radio" name="act" style="box-shadow: none;">Inactive<br> -->
+                        </div>
+                    </div>
+                    <input type="submit" value="Add" onclick="Add(); Confirm();" id="addButton">
+
+                    
+                </form>
+
+                <!-- <button class = "addButton" onclick="Add(); Confirm();" >Add</button> -->
+                <p id="confirm"></p>
+        </div>
+    </div>
+
+    <script src="{% static 'JavaScript/main.js' %}"></script>
+</body>
+</html>
+
+{% endblock content %}

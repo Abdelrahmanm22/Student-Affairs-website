@@ -1,0 +1,52 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    
+
+        <div class="container">
+            
+            <div class="Form">
+                <div class="left">
+                    <h1><i style="color: #fbb844;">MyUniversity</i> <br>
+                        Student Affairs
+                    </h1>
+                    <img src="{% static 'Image/brain-desktop.svg' %}" alt="brain" width="250px" height="250px">
+                </div>
+
+                <div class="right">
+                    <!-- <form action=""> -->
+                        <div class = "partone">
+                            <div class = "group7">
+                                <fieldset style="border: 0;">
+                                    <label for="email" >E-mail Address</label><br>
+                                    <input type="text" id="email" placeholder="example@fci-cu.edu.eg" required ><br>
+                                </fieldset>
+                            </div>
+                            <div class = "group8">
+                                <fieldset style="border: 0;">    
+                                    <label for="pass" >Password</label><br>
+                                    <input type="password" id="pass" placeholder="8-16 characters" required><br>
+                                    <a href="recovery.com" style="font-size: 13px; ">Forgot Password?</a>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <button class="loginBtn" onclick="login()">Login</button>
+                        
+                    <!-- </form> -->
+                </div>
+            </form>
+        </div> 
+    
+    <script src="{% static 'JavaScript/main.js' %}"></script>
+</body>
+</html>

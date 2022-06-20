@@ -1,0 +1,98 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+        <title>
+            Search
+        </title>
+    </head>
+    <body>
+        
+
+        <div class="container container-search" style="background-color: #f5f2f0; height:100%">
+            
+            <table class="table1">
+                <tr>
+                    <th>Selection <span>(Active Students)</span></th>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>GPA</th>
+                    <th>Date Of Birth</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Level</th>
+                </tr>
+                {%for x in actStu%}
+                <tr>
+                    
+                    <!-- <td>{{x.Name}}</td>
+                    <td>{{x.StudentID}}</td>
+                    <td>{{x.GPA}}</td>
+                    <td>{{x.Date}}</td>
+                    <td>{{x.Gender}}</td>
+                    <td>{{x.Department}}</td>
+                    <td>{{x.Level}}</td> -->
+                    <td><button class="select">Select</button></td>
+                    <td><p name="search_name"class="nameS">{{x.Name}}</p></td>
+                    <td><p class="IdS">{{x.StudentID}}</p></td>
+                    <td>{{x.GPA}}</td>
+                    <td>{{x.Date}}</td>
+                    <td>{{x.Gender}}</td>
+                    <td>{{x.Department}}</td>
+                    <td><p class="level">{{x.level}}</p></td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+            <form method="GET">
+    
+            <div class="Search_Bar">
+                <input type="text" placeholder="Search.."value="{{request.GET.Name}}">
+            </div>
+            </form>
+        
+            <button class="btnSearch" type="submit">
+                &#128270
+            </button>
+        
+            <div class="info">
+                <span>Name: </span>
+                <input type="text" id="nameInfo" disabled>
+
+                <br> <br> <br> <br>
+
+                <span>ID: </span>
+                <input type="text" id="idInfo" disabled>
+
+                <br> <br> <br> <br>
+
+                <span>Department: </span>
+                <input list="Department">
+                <datalist id="Department">
+                    <option value="DS">DS</option>
+                    <option value="CS">CS</option>
+                    <option value="IS">IS</option>
+                    <option value="IT">IT</option>
+                    <option value="AI">AI</option>
+                </datalist>
+
+                <button class = "submitBtn">Submit</button>
+            </div>
+            <div class="Search_Bar2">
+                <input type="text" placeholder="Search..">
+            </div>
+        </div>  
+        
+            
+    
+
+
+          <script src="{% static 'JavaScript/main.js' %}"></script>
+    </body>
+</html>
+{% endblock content %}

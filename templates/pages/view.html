@@ -1,0 +1,48 @@
+{% extends 'nav.html'  %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <title>View</title>
+</head>
+<body>
+    <div class="container">
+        <!-- <nav class="nav">
+            <div class="elements">
+                <p class="navigation">Home</p>
+                <p class="navigation">Add Student</p>
+                <p class="navigation">Update</p>
+                <p class="navigation">Search</p>
+                <p class="navigation">View</p>
+                <p class="navigation">Login</p>
+            </div>
+        </nav> -->
+        <!-- <p class="view">view all active/inactive students</p> -->
+        <table class="table1">
+            <tr>
+                <th>Name <span>(view all active/inactive students)</span></th>
+                <th>ID</th>
+                <th>Activation</th>
+                
+            </tr>
+            {% for i in student %}
+            <tr>
+                <td>{{i.Name}}</td>
+                <td>{{i.StudentID}}</td>
+                <td>{{i.activation}}</td>
+            </tr>
+            {% endfor %}
+        
+        </table>
+        
+    </div>   
+    
+    <script src="{% static 'JavaScript/main.js' %}"></script>
+</body>
+</html>
+{% endblock content %}
